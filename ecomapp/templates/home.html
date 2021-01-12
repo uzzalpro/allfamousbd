@@ -1,0 +1,49 @@
+{%extends 'index.html'%}
+{%load static%}
+
+    {% block title %}
+{{setting.title}}
+
+    {% endblock title %}
+
+    {% block discription  %}
+{{setting.description}}
+    
+    {% endblock discription %}
+
+    {% block keywords %}
+    {% endblock keywords %}
+
+
+    {% block header %}
+    {%include "header.html"%}
+    {% endblock header %}
+
+    
+    <!-- Hero Section Begin -->
+    {% block slider %}
+    {%include "slider.html"%}
+    {% endblock slider %}
+    <!-- Hero Section End -->
+
+    <!-- Side Banner Begin -->
+    {% block sidebanner %}
+    {%include "sidebanner.html"%}
+    {% endblock sidebanner %}
+    <!-- Side Banner End -->
+
+
+    {% block mainbody %}
+    {%include "content.html"%}
+    {% endblock mainbody %}
+
+    {% block footer %}
+    {%include "footer.html"%}
+    {% endblock footer %}
+
+
+
+ 
+
+ 
+

@@ -1,0 +1,25 @@
+{%load static%} 
+ <!-- Hero Section Begin -->
+ <section class="hero-section">
+    <div class="hero-items owl-carousel">
+        {% for p in sliding_images %}   
+        <div class="single-hero-items set-bg" data-setbg="">
+            <img src="{{p.ImageUrl}}" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <span>{{p.keywords}}</span>
+                        <h1>{{p.title}}</h1>
+                        <p>{{p.detail}}</p>
+                        <a href="#" class="primary-btn">Shop Now</a>
+                    </div>             
+                    <div class="off-card">
+                        <h2>Big <span>Sale</span></h2>
+                    </div>    
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+<!-- Hero Section End -->
+ 
