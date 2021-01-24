@@ -1,10 +1,9 @@
 {%load static%} 
  <!-- Hero Section Begin -->
  <section class="hero-section">
-    <div class="hero-items owl-carousel">
-        {% for p in sliding_images %}   
-        <div class="single-hero-items set-bg" data-setbg="">
-            <img src="{{p.ImageUrl}}" alt="">
+        <div class="hero-items owl-carousel">
+            {% for p in sliding_images %}
+        <div class="single-hero-items set-bg {%if forloop.first%} active {%endif%}" data-setbg="{{p.ImageUrl}}">          
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
@@ -18,8 +17,42 @@
                     </div>    
                 </div>
             </div>
+        </div>
         {% endfor %}
     </div>
 </section>
 <!-- Hero Section End -->
+
+<!-- Banner Section Begin -->
+<div class="banner-section spad">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="single-banner">
+                    <img src="{%static ''%}img/banner-1.jpg" alt="">
+                    <div class="inner-text">
+                        <h4>Saree’s</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-banner">
+                    <img src="{%static ''%}img/banner-2.jpg" alt="">
+                    <div class="inner-text">
+                        <h4>Sweet’s</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-banner">
+                    <img src="{%static ''%}img/banner-3.jpg" alt="">
+                    <div class="inner-text">
+                        <h4>Other’s</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Section End -->
  

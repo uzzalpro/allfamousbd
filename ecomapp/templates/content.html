@@ -22,96 +22,32 @@
                     </ul>
                 </div>
                 <div class="product-slider owl-carousel">
+                    {% for p in Latest_Clothings %}
                     <div class="product-item">
                         <div class="pi-pic">
-                            <img src="{%static ''%}img/products/women-1.jpg" alt="">
+                            <img src="{{p.ImageUrl}}" alt="">
                             <div class="sale">Sale</div>
                             <div class="icon">
                                 <i class="icon_heart_alt"></i>
                             </div>
                             <ul>
-                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                <li class="w-icon active"><a href="{%url 'Add_to_Shoping_cart' id=p.id%}"><i class="icon_bag_alt"></i></a></li>
+                                <li class="quick-view"><a href="{%url 'product_single' id=p.id%}">+ Quick View</a></li>
                                 <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
                             </ul>
                         </div>
                         <div class="pi-text">
-                            <div class="catagory-name">Slik</div>
+                            <div class="catagory-name">{{p.Category}}</div>
                             <a href="#">
-                                <h5>Half Cotton</h5>
+                                <h5>{{p.title}}</h5>
                             </a>
                             <div class="product-price">
-                                ৳00.00
-                                <span>৳00.00</span>
+                                ৳{{p.new_price}}
+                                <span>৳{{p.old_price}}</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="{%static ''%}img/products/women-2.jpg" alt="">
-                            <div class="icon">
-                                <i class="icon_heart_alt"></i>
-                            </div>
-                            <ul>
-                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="pi-text">
-                            <div class="catagory-name">Tangail tat</div>
-                            <a href="#">
-                                <h5>Pure cotton</h5>
-                            </a>
-                            <div class="product-price">
-                                ৳00.00
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="{%static ''%}img/products/women-3.jpg" alt="">
-                            <div class="icon">
-                                <i class="icon_heart_alt"></i>
-                            </div>
-                            <ul>
-                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="pi-text">
-                            <div class="catagory-name">Muslin</div>
-                            <a href="#">
-                                <h5>Pure cotton</h5>
-                            </a>
-                            <div class="product-price">
-                                ৳00.00
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="{%static ''%}img/products/women-4.jpg" alt="">
-                            <div class="icon">
-                                <i class="icon_heart_alt"></i>
-                            </div>
-                            <ul>
-                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="pi-text">
-                            <div class="catagory-name">Jamdani</div>
-                            <a href="#">
-                                <h5>Cotton</h5>
-                            </a>
-                            <div class="product-price">
-                                ৳00.00
-                            </div>
-                        </div>
-                    </div>
+                    </div>                   
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -170,96 +106,32 @@
                     </ul>
                 </div>
                 <div class="product-slider owl-carousel">
+                    {% for p in Latest_Clothings %}
                     <div class="product-item">
                         <div class="pi-pic">
-                            <img src="{%static ''%}img/products/man-1.jpg" alt="">
+                            <img src="{{p.ImageUrl}}" alt="">
                             <div class="sale">Sale</div>
                             <div class="icon">
                                 <i class="icon_heart_alt"></i>
                             </div>
                             <ul>
-                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                <li class="w-icon active"><a href="{%url 'Add_to_Shoping_cart' id=p.id%}"><i class="icon_bag_alt"></i></a></li>
+                                <li class="quick-view"><a href="{%url 'product_single' id=p.id%}">+ Quick View</a></li>
                                 <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
                             </ul>
                         </div>
                         <div class="pi-text">
-                            <div class="catagory-name">Sandesh</div>
+                            <div class="catagory-name">{{p.Catagory}}</div>
                             <a href="#">
-                                <h5>Gurer Para Sandesh</h5>
+                                <h5>{{p.title}}</h5>
                             </a>
                             <div class="product-price">
-                                ৳00.00
+                                ৳{{p.new_price}}
                                 <span>৳00.00</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="{%static ''%}img/products/man-2.jpg" alt="">
-                            <div class="icon">
-                                <i class="icon_heart_alt"></i>
-                            </div>
-                            <ul>
-                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="pi-text">
-                            <div class="catagory-name">Gur</div>
-                            <a href="#">
-                                <h5>Patali Gur</h5>
-                            </a>
-                            <div class="product-price">
-                                ৳00.00
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="{%static ''%}img/products/man-3.jpg" alt="">
-                            <div class="icon">
-                                <i class="icon_heart_alt"></i>
-                            </div>
-                            <ul>
-                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="pi-text">
-                            <div class="catagory-name">Kacha Golla</div>
-                            <a href="#">
-                                <h5>Natorer Kacha Golla</h5>
-                            </a>
-                            <div class="product-price">
-                                ৳00.00
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-item">
-                        <div class="pi-pic">
-                            <img src="{%static ''%}img/products/man-4.jpg" alt="">
-                            <div class="icon">
-                                <i class="icon_heart_alt"></i>
-                            </div>
-                            <ul>
-                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="pi-text">
-                            <div class="catagory-name">Towel</div>
-                            <a href="#">
-                                <h5>Bagurar Doi</h5>
-                            </a>
-                            <div class="product-price">
-                                ৳00.00
-                            </div>
-                        </div>
-                    </div>
+                    </div>                    
+                    {% endfor %} 
                 </div>
             </div>
             <div class="col-lg-3 offset-lg-1">

@@ -20,7 +20,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('ecomapp.urls'))
+    path('',include('ecomapp.urls')),
+    path('order/',include('OrderApp.urls')),
+    path('user/',include('UserApp.urls')),
+    path('product/',include('Product.urls')),
+    #path('ckeditor/',include('ckeditor_uploader.urls')),
 ]
 
 if settings.DEBUG:
