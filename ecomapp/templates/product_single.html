@@ -181,11 +181,11 @@ Product-Single
                                 <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
                             </div>
                             <div class="pd-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star{%if single_product.average_review < 1%}-o{%endif%}"></i>
+                                <i class="fa fa-star{%if single_product.average_review < 2%}-o{%endif%}"></i>
+                                <i class="fa fa-star{%if single_product.average_review < 3%}-o{%endif%}"></i>
+                                <i class="fa fa-star{%if single_product.average_review < 4%}-o{%endif%}"></i>
+                                <i class="fa fa-star{%if single_product.average_review < 5%}-o{%endif%}"></i>
                                 <span>(5)</span>
                             </div>
                             <div class="pd-desc">
