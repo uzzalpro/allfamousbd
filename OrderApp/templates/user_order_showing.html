@@ -1,0 +1,89 @@
+{%extends 'index.html'%}
+{%load static%}
+
+{% block title %}
+OrderCart
+
+    {% endblock title %}
+
+    {% block discription  %}
+{{setting.description}}
+    
+    {% endblock discription %}
+
+    {% block keywords %}
+    {% endblock keywords %}
+
+
+    {% block header %}
+    {%include "header.html"%}
+    {% endblock header %}
+
+
+{%block another_content%}
+
+
+<!-- Breadcrumb Section Begin -->
+<div class="breacrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-text product-more">
+                    <a href="./home.html"><i class="fa fa-home"></i> Home</a>
+                    <a href="./shop.html">user</a>
+                    <span>orderlist</span>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+<!-- Breadcrumb Section Begin -->
+
+
+<!-- Shopping Cart Section Begin -->
+<div class="page-section mb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-3 mb-30">
+                <h1 class="font-weight-bold display-4">User Panel</h1>
+                {% include 'user_panel.html' %}
+            </div>
+            <div class="col-lg-9">
+                <div class="cart-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="cart-product-name">Username</th>
+                                    <th class="li-product-price">Ordered Price</th>
+                                    <th class="li-product-stock-status">Status</th>
+                                    <th class="li-product-stock-status">Admin note</th>
+                                    <th class="li-product-add-cart">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for p in orders%}
+                            <tr>                                
+                                <td class="li-product-name"><a href="#">{{p.user.username}}</a></td>
+                                <td class="li-product-price"><span class="amount">৳{{p.total}}</span></td>
+                                <td class="li-product-stock-status"><span class="in-stock">{{p.status}}</span></td>
+                                <td class="li-product-price"><span class="amount">{{p.adminnote}}</span></td>
+                                <td class="li-product-add-cart"><a href="{%url 'user_order_details' id=p.id%}"  class="primary-btn">Details</a></td>                                
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+<!-- Shopping Cart Section End -->
+
+
+
+{%endblock another_content%}
+
+
+{% block footer %}
+{%include "footer.html"%}
+{% endblock footer %}

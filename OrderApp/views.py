@@ -159,3 +159,45 @@ def OrderCart(request):
     }
     return render(request, 'order_form.html', context)
 
+
+def Order_showing(request):
+    category = Category.objects.all()
+    setting = Setting.objects.get(id=1)
+    current_user = request.user
+    orders = Order.objects.filter(user_id=current_user.id)
+
+    context = {'category': category,
+               'setting': setting,
+               'orders': orders
+    }
+    return render(request, 'user_order_showing.html', context)
+
+
+@login_required(login_url='/user/login')
+def user_order_details(request, id):
+    category = Category.objects.all()
+    setting = Setting.objects.get(id=1)
+    current_user = request.user
+    order = Order.objects.get(user_id=current_user.id, id=id)
+    order_products = OrderProduct.objects.filter(order_id=id)
+
+    context = {'order': order,
+               'order_products': order_products,
+               'category': category,
+               'setting': setting,               
+    }
+    return render(request, 'user_order_details.html', context)
+
+
+
+def Order_Product_showing(request):
+    category = Category.objects.all()
+    setting = Setting.objects.get(id=1)
+    current_user = request.user
+    order_product = OrderProduct.objects.filter(user_id=current_user.id)
+
+    context = {'category': category,
+               'setting': setting,               
+               'order_product': order_product
+    }
+    return render(request, 'OrderProductList.html', context)
