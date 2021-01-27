@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import logout, authenticate, login, update_session_auth_hash
-from Product.models import Product, Images, Category
+from Product.models import Product, Images, Category, Comment
 from django.contrib import messages
 from ecomapp.models import Setting
 from UserApp.forms import RegisterForm, UserUpdateForm, ProfileUpdateForm
@@ -134,4 +134,29 @@ def user_password(request):
             'form': form,
             'category': category,
             'setting': setting
-        })       
+        })
+
+
+
+@login_required(login_url='/user/login')
+def usercomment(request):
+    category = Category.objects.all()
+    setting = Setting.objects.get(id=1)
+    current_user = request.user
+    comment = Comment.objects.filter(user_id=current_user.id)
+    context = {'category': category,
+               'setting': setting,
+               'comment': comment
+
+    }
+    return render(request, 'usercomment.html', context)               
+
+
+
+
+def comment_delete(request, id):
+    current_user = request.user
+    comment = Comment.objects.filter(user_id=current_user.id,id=id)
+    comment.delete()
+    messages.success(request, 'Your Comment is Successfully Delete')
+    return redirect('usercomment')

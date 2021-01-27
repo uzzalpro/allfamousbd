@@ -1,5 +1,4 @@
 from django.shortcuts import render, HttpResponse, redirect, HttpResponseRedirect, reverse
-from django.urls import reverse
 from ecomapp.models import Setting, ContactMessage, ContactForm
 from Product.models import Product, Images, Category
 from OrderApp.models import ShopCart, ShopingCartForm, Order, OrderForm, OrderProduct
@@ -178,13 +177,14 @@ def user_order_details(request, id):
     category = Category.objects.all()
     setting = Setting.objects.get(id=1)
     current_user = request.user
-    order = Order.objects.get(user_id=current_user.id, id=id)
+    order = Order.objects.get(user_id=current_user.id,id=id)
     order_products = OrderProduct.objects.filter(order_id=id)
+    context = {
 
-    context = {'order': order,
-               'order_products': order_products,
-               'category': category,
-               'setting': setting,               
+        'order': order,
+        'order_products': order_products,
+        'category': category,
+        'setting': setting,
     }
     return render(request, 'user_order_details.html', context)
 
@@ -201,3 +201,21 @@ def Order_Product_showing(request):
                'order_product': order_product
     }
     return render(request, 'OrderProductList.html', context)
+
+
+
+@login_required(login_url='/user/login')
+def user_order_product_details(request, id,oid):
+    category = Category.objects.all()
+    setting = Setting.objects.get(id=1)
+    current_user = request.user
+    order = Order.objects.get(user_id=current_user.id,id=oid)
+    order_products = OrderProduct.objects.get(user_id=current_user.id, id=id)
+    context = {
+
+        'order': order,
+        'order_products': order_products,
+        'category': category,
+        'setting': setting,
+    }
+    return render(request, 'user_order_product_details.html', context)

@@ -73,43 +73,14 @@ OrderCart
                                 </tr>
                                 <tr>
                                     <th class="text-left">Shiping Info: </th>
-                                    <td class="text-left">{{ order.adminnote}}</td>
+                                    <td class="text-left">{{ order_products.amount}}</td>
                                 </tr>
                             </table>
                     </div> 
                 </div>                
                 
 
-                <div class="col-lg-12">
-                    <div class="cart-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="cart-pic">Image</th>
-                                    <th class="li-product-price">Product title</th>                                
-                                        <th class="li-product-price">Price</th>
-                                        <th class="li-product-price">Quantity</th>
-                                        <th class="li-product-price">Total Price</th>
-                                        <th class="li-product-stock-status">Status</th>                                    
-                                        <th class="li-product-add-cart">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                               {%for p in order_product%} 
-                                <tr>                                
-                                    <td class="cart-pic"><img src="{{p.product.ImageUrl}}" style="height: 50px;" alt=""></td>
-                                    <td class="li-product-price"><span class="amount">{{p.product.title}}</span></td>
-                                    <td class="li-product-price"><span class="amount">৳{{p.price}}</span></td>
-                                    <td class="li-product-price"><span class="amount">{{p.quantity}}</span></td>                                
-                                    <td class="li-product-price"><span class="amount">{{p.amountnow}}</span></td>
-                                    <td class="li-product-stock-status"><span class="in-stock">{{p.status}}</span></td>
-                                    <td class="li-product-add-cart"><a href=""  class="primary-btn">Details</a></td>                                
-                                </tr>
-                                {%endfor%}
-                            </tbody>
-                        </table>
-                    </div>                
-                </div>                
+                
     </div>
 </div>
 

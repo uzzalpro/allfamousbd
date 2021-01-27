@@ -46,7 +46,7 @@ OrderCart
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-xs-12 col-lg-3 mb-30">
-                <h1 class="font-weight-bold display-4">User Panel</h1>
+                <h1 class="text-center font-weight-bold" style="font-size: 30px;">User Panel</h1>
                 {% include 'user_panel.html' %}
             </div>
             <div class="col-lg-9">
@@ -72,7 +72,7 @@ OrderCart
                                 <td class="li-product-price"><span class="amount">{{p.quantity}}</span></td>                                
                                 <td class="li-product-price"><span class="amount">{{p.amountnow}}</span></td>
                                 <td class="li-product-stock-status"><span class="in-stock">{{p.status}}</span></td>
-                                <td class="li-product-add-cart"><a href=""  class="primary-btn">Details</a></td>                                
+                                <td class="li-product-add-cart"><a href="{%url 'user_order_product_details' id=p.id oid=p.order_id%}"  class="primary-btn">Details</a></td>                                
                             </tr>
                             {%endfor%}
                         </tbody>
