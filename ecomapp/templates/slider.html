@@ -5,16 +5,18 @@
             {% for p in sliding_images %}
         <div class="single-hero-items set-bg {%if forloop.first%} active {%endif%}" data-setbg="{{p.ImageUrl}}">          
             <div class="container">
-                <div class="row">
+                <div class="row">                	
                     <div class="col-lg-5">
                         <span>{{p.keywords}}</span>
                         <h1>{{p.title}}</h1>
                         <p>{{p.detail}}</p>
                         <a href="#" class="primary-btn">Shop Now</a>
-                    </div>             
-                    <div class="off-card">
+                    </div>
+                    {%if forloop.first%}             
+                    <div class="off-card ">
                         <h2>Big <span>Sale</span></h2>
-                    </div>    
+                    </div>
+                    {%endif%}    
                 </div>
             </div>
         </div>
