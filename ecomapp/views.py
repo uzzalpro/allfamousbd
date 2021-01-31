@@ -123,7 +123,7 @@ def SearchView(request):
 def ShopAll(request):
     category = Category.objects.all()
     setting = Setting.objects.get(id=1)
-    shop_all = Product.objects.all()
+    shop_all = Product.objects.all().order_by('-id')[:10]
 
     context = {'setting': setting,
                'category': category,

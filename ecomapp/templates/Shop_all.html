@@ -154,8 +154,10 @@ Product-Single
                 </div>
                 <div class="product-list">                    
                     <div class="row">                        
-                        <div class="col-lg-4 col-sm-6">                           
-                            <div class="product-item">                                
+                        <div class="col-lg-4 col-sm-6">
+                                                   
+                            <div class="product-item">
+                            {%for p in shop_all%}                                
                                 <div class="pi-pic">
                                     <img src="{{p.ImageUrl}}" alt="">
                                     <div class="sale">Sale</div>
@@ -178,7 +180,9 @@ Product-Single
                                         <span>৳{{p.old_price}}</span>
                                     </div>
                                 </div>
+                                {%endfor%}
                             </div>
+                            
                         </div>                        
                     </div>                    
                 </div>                
