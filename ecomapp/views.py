@@ -13,15 +13,19 @@ def Home(request):
     for p in cart_product:
         total_amount+=p.product.new_price*p.quantity
     category = Category.objects.all()
-    setting = Setting.objects.get(id=1)
+    #setting = Setting.objects.get(id=1)
     sliding_images = Product.objects.all().order_by('id')[:2]
     Latest_Clothings = Product.objects.all().order_by('-id')
     products = Product.objects.all()
+
+    total_quan = 0
+    for p in cart_product:
+        total_quan += p.quantity
     
 
 
     context = {'category': category,
-               'setting': setting,
+               #'setting': setting,
                'sliding_images': sliding_images,
                'Latest_Clothings': Latest_Clothings,
                'products': products,
